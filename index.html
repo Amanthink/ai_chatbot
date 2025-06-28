@@ -1,1 +1,26 @@
 
+
+html
+<!DOCTYPE html>
+<html>
+<head><title>AI Help Bot</title></head>
+<body>
+  <h1>Ask AI Help Bot</h1>
+  <input id="userInput" placeholder="Type your question">
+  <button onclick="askBot()">Ask</button>
+  <div id="chat"></div>
+
+  <script>
+    async function askBot() {
+      const q = document.getElementById("userInput").value;
+      const res = await fetch("https://your-backend-url.onrender.com/ask", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ question: q })
+      });
+      const { answer } = await res.json();
+      document.getElementById("chat").innerHTML += `<p><b>You:</b> ${q}<br><b>Bot:</b> ${answer}</p>`;
+    }
+  </script>
+</body>
+</html>
