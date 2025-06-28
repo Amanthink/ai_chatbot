@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+networkx
+beautifulsoup4
+requests
+spacy
+
