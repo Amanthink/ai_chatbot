@@ -1,4 +1,3 @@
-python
 import networkx as nx
 from backend.nlp.entity_extractor import extract_entities
 
